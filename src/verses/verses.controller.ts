@@ -23,4 +23,16 @@ export class VersesController {
   findOne(@Param('id') id: number) {
     return this.versesService.findOne(id);
   }
+
+  @Get(':version_id/random')
+  findRandom(@Param('version_id') version_id: number) {
+    return this.versesService.findRandom(version_id);
+  }
+  @Get(':version_id/:search')
+  findByVersionAndWord(
+    @Param('version_id') version_id: number,
+    @Param('search') search: string,
+  ) {
+    return this.versesService.findByVersionAndWord(version_id, search);
+  }
 }

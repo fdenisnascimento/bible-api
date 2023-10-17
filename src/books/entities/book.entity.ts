@@ -1,10 +1,4 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'books' })
 export class Book {
@@ -19,6 +13,9 @@ export class Book {
 
   @Column()
   name: string;
+
+  @Column({ nullable: true })
+  chapters: number;
 
   @Column()
   abrev: string;
